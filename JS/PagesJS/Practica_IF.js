@@ -98,15 +98,42 @@ function calcularDescuento() {
 
 function verificarMayorMenor() {
     let edad = document.getElementById('edadSimple').value;
+   
+    // Para obtener el año actual de forma dinámica se debe escribir lo siguiente
+    let currentYear = new Date().getFullYear();    //Esto hace que cuando cambie el año, se recalcule la edad en función del año de nacimiento ingresado
     
 
       if (edad <= 2007) {
         alert(`Eres mayor de edad.`)
-        document.getElementById("mensajeEdadSimple").innerText = `Eres meyor de edad.`
+        document.getElementById("mensajeEdadSimple").innerText = `Eres meyor de edad. Tu edad es ${currentYear - edad}`
     }
     else {
 alert(`Alerta, menor de edad.`)
-        document.getElementById("mensajeEdadSimple").innerText = `Eres menor de edad. Por favor presentate con tu padre, madre o encargado legal.`
+        document.getElementById("mensajeEdadSimple").innerText = `Tu edad es: ${currentYear - edad}. Eres menor de edad. Por favor presentate con tu padre, madre o encargado legal.`
 
     }
 }
+
+//Fin Caso4-B Verificacion rapida de edad
+
+//Como hacer para que en lugar de que 2007 sea fijo se pueda  dinamizar tambien 
+
+// function verificarMayorMenor() {
+//     // Suponemos que 'edad' es en realidad el año de nacimiento ingresado
+//     let anioNacimiento = parseInt(document.getElementById('edadSimple').value, 10);
+    
+//     // Obtén el año actual de forma dinámica
+//     let currentYear = new Date().getFullYear();
+    
+//     // Calcula el año límite para ser mayor de edad (18 años)
+//     let umbral = currentYear - 18;
+    
+//     // Si el año de nacimiento es menor o igual que el umbral, es mayor de edad
+//     if (anioNacimiento <= umbral) {
+//         alert("Eres mayor de edad.");
+//         document.getElementById("mensajeEdadSimple").innerText = `Eres mayor de edad. Tu edad es ${currentYear - anioNacimiento}`;
+//     } else {
+//         alert("Alerta, menor de edad.");
+//         document.getElementById("mensajeEdadSimple").innerText = `Tu edad es ${currentYear - anioNacimiento}. Eres menor de edad. Por favor preséntate con tu padre, madre o encargado legal.`;
+//     }
+// }
