@@ -109,4 +109,53 @@ resultado.innerHTML += `<li>nombre: ${element.nombre}</>`  //El += es para que n
     });
 }
 
-// Entregable 2 hacer ejercicios 3, 4 y 5
+//  Inicio Entregable 3 de Proyecto Final
+
+//Ejercicio 3 inicio
+function primeraMayorDeEdad() {
+    let resultado = document.getElementById('resultadoMayor');
+
+    let busqueda = personas.find(x=> x.edad >= 18)
+
+
+if (busqueda) {
+    resultado.innerHTML = `Primera persona mayor de edad encontrada ${busqueda.nombre} cuya edad es ${busqueda.edad} años.`
+
+}
+
+}
+
+// Fin Ejercicio 3
+
+//Ejercicio 4 Inicio
+
+function mostrarTodasLasPersonas() {
+    let resultado = document.getElementById('listaPersonas');
+
+    personas.forEach(element => {
+       resultado.innerHTML += `<li> ${element.nombre}</>`  //El += es para que no borre el anterior y mas bien vaya agregando elementos que cumplan con los criterios 
+        
+        
+    });
+}
+
+//Fin Ejercicio 4
+
+
+//Ejercicio 5 Inicio
+
+function mayoresDeEdad() {
+    let resultado = document.getElementById('listaMayores');
+
+    personas.forEach(element => {
+        if (element.edad >= 18) {
+resultado.innerHTML += `<li>${element.nombre} su edad es ${element.edad}</>`  //El += es para que no borre el anterior y mas bien vaya agregando elementos que cumplan con los criterios 
+        }
+        
+    });
+}
+
+//Fin Ejercicio 5
+
+
+//Fin Entregable 3 de Proyecto Final
