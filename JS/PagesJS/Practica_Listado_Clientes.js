@@ -10,7 +10,7 @@ let Datos_Locales = [
 ];
 
 
-DatosFiltrados = Datos_Locales
+
 
 
 let DatosFiltrados = []
