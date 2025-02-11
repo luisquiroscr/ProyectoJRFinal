@@ -31,3 +31,22 @@ function ConsultarDatos() {
             return null;
         });
 }
+
+
+//ConsultaAPIClientes
+// Consultar a la api Api_Usiarios
+
+function consultarDatos() {
+    fetch(Api_Usuarios)
+        
+        .then(response => response.json())
+        .then(result => {
+            // custom error
+            console.log(result)
+        })
+        .catch(error => {
+            // common error
+            return null;
+        });
+    
+}
