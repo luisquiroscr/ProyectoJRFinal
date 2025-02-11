@@ -11,7 +11,7 @@ const Api2 = "https://rickandmortyapi.com/api/character"
 let DatosFiltrados = []
 let DatosFiltrados2 = []
 let contenedor = document.getElementById('tbody');
-let contenedor2 = document.getElementById('tbody');
+let contenedor2 = document.getElementById('tbody'); //Crean Contenido
 
 //aela Visualizar al ejecutar la pagina DOM
 document.addEventListener('DOMContentLoaded', () => {
