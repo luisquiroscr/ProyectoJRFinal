@@ -2,18 +2,21 @@ console.log('Funcionando Archivo: API_Listado_Clientes');
 
 const Api_Usuarios = "https://jsonplaceholder.typicode.com/users"
 
+const Api2 = "https://rickandmortyapi.com/api/character" 
 
 // Datos locales simulando la API
 
 
 
 let DatosFiltrados = []
+let DatosFiltrados2 = []
 let contenedor = document.getElementById('tbody');
-
+let contenedor2 = document.getElementById('tbody');
 
 //aela Visualizar al ejecutar la pagina DOM
 document.addEventListener('DOMContentLoaded', () => {
     consultarDatos()
+    consultarDatos2()
 
 });
 
@@ -38,6 +41,31 @@ function consultarDatos() {
     
 }
 
+function consultarDatos2() {
+
+    //fetchget
+    fetch(Api2) //1- se le indica la url de la api 
+        
+        .then(response => response.json()) // 2 -Conversion de datos , JSON 
+        .then(result => {           //3- Resultado  result
+            // custom error
+            console.log(result.results)
+            DatosFiltrados = result
+            Mostrar_CampoTabla()
+        })
+        .catch(error => {      ///4- Catch
+            // common error
+            alert("Error ",error)
+            return null;
+        });
+    
+}
+
+
+
+
+
+
 function Mostrar_CampoTabla() {
     
     let html = ""
@@ -59,4 +87,9 @@ function Mostrar_CampoTabla() {
         `
 
     });
+    contenedor.innerHTML = html  //pinta en el HTML
 }
+
+
+
+//https://rickandmortyapi.com/api/character
